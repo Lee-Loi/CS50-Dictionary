@@ -1,0 +1,43 @@
+0.  It is the longest word in the english language and it refers to a lung
+    disease. According to google.
+1.  getrusage() appears to get the resource usage of the program. It can show
+    the amount of memory & CPU time used to execute the program till it returns.
+2.  There appears to be 16 members in the rusage struct so it stores 16 types
+    of data.
+3.  I believe it's because we're accessing before and after many times by
+    calculate and by referencing, we're accessing the same exact before & after
+    values each time we use it.
+4.  After using fopen to read the text and assigning it "fp", we use fgetc to 
+    iterate through the characters in fp. First we initalise c to fgetc(fp) and
+    check to make sure c hasn't reached end of file. Then we iterate through the
+    characters. 
+    First we check if the character is alphabetical or if it's an
+    apostrophe. Then main puts the character into the word[index] and increases
+    the index. It then ignores alphabetical strings too long to be words by
+    checking the word index against LENGTH. A while loop consumes the rest of
+    the alphebtical string and the index is reset to 0 to prepare for a new word
+    to be checked.
+5.  It's better to use fgetc over fscanf because it will only scan alphebtical
+    letters and apostrophes. fscanf may scan other characters and symbols such
+    as commas.
+6.  Googling "const" I found it is a argument that once used, that variable can
+    never be altered or changed within the program. I believe you assigned
+    const for check and load to make sure the statistics are never changed
+    while the program is running to keep the anaylitics and measurements as
+    accurate as possible.
+7.  I used a linked list with a hashtable. Inside the linked list struct I 
+    have a char data type to hold words from dictionary and texts. I also have
+    an entry that moves onto the next node. I got a good hash table recommended
+    by a TF that hashes words in 4 lines. In check and unload I implemented a
+    cursor that goes through each of the nodes to see if the word is in the
+    dictionary and then to free each of the nodes.
+8.  My code was 0.06 in total the first time I got it working correctly. 
+9.  There wasn't many changes I made to my code to make it run faster. By the
+    time my program compiled the first time successfully and ran I already dealt
+    with hash collisions, segmentation faults and other errors. Upon re-checking
+    my code I couldn't identify areas of optimization, especially since my hash
+    table was very efficient.
+10. While I am happy with the speed of my code, upon checking it on the big
+    board I think the biggest bottleneck was the amount of RAM it used. With
+    more time I probably would have tried to find a method that used less
+    memory both on the heap and the stack for overall efficiency. 
